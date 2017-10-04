@@ -1,6 +1,21 @@
 #!/usr/bin/env python
 # -*- encoding:utf-8 -*-
 
+import requests
+from bs4 import BeautifulSoup
+
+
+def getFromUrl(url):
+    html = requests.get(url)
+    html_text = html.text
+
+    soup = BeautifulSoup(html_text, 'html.parser')
+    text = soup.find('font', attrs={'color': '#f000f0'})
+    text = text.contents[0]
+
+    return text
+
+
 def convert(str):
     newStr = ""
     for s in str:
@@ -15,8 +30,11 @@ def convert(str):
 
 
 if __name__ == '__main__':
-    s = """g fmnc wms bgblr rpylqjyrc gr zw fylb. rfyrq ufyr amknsrcpq ypc dmp. bmgle gr gl zw fylb gq glcddgagclr ylb rfyr'q ufw rfgq rcvr gq qm jmle. sqgle qrpgle.kyicrpylq() gq pcamkkclbcb. lmu ynnjw ml rfc spj."""
-    s2 = convert(s)
+    url = 'http://www.pythonchallenge.com/pc/def/map.html'
+
+    str = getFromUrl(url)
+
+    s2 = convert(str)
     print(s2)
 
 #  根据字符转换规律，转换url的map-->ocr
