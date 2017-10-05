@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 # -*- encoding:utf-8 -*-
 
+#  http://www.pythonchallenge.com/pc/def/map.html
+
 import requests
 from bs4 import BeautifulSoup
 

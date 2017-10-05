@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 # -*- encoding:utf-8 -*-
 
+#  http://www.pythonchallenge.com/pc/def/ocr.html
+
 import requests
 import re
 
