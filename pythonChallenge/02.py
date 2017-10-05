@@ -2,6 +2,7 @@
 # -*- encoding:utf-8 -*-
 
 import requests
+import re
 
 
 def findCharacter(url):
@@ -10,11 +11,15 @@ def findCharacter(url):
 
     html_text = html_text[html_text.find("-->"):]
 
-    str = ""
+    #  str = ""
 
-    for c in html_text:
-        if (c >= 'A' and c <= 'Z') or (c >= 'a' and c <= 'z'):
-            str += c
+    #  for c in html_text:
+    #  if (c >= 'A' and c <= 'Z') or (c >= 'a' and c <= 'z'):
+    #  str += c
+
+    regex = re.compile("[a-zA-Z]+")
+    str = regex.findall(html_text)
+    str = "".join(str)
 
     return str
 
