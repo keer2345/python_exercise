@@ -5,7 +5,6 @@
 
 import requests
 import re
-import time
 
 
 def getHtml(url, nothing):
@@ -39,10 +38,10 @@ def getHtml(url, nothing):
     return list
 
 
-#  最后得到peak.html
-#  http://www.pythonchallenge.com/pc/def/peak.html
-
 if __name__ == '__main__':
     url = 'http://www.pythonchallenge.com/pc/def/linkedlist.php'
     nothing = '12345'
     print(getHtml(url, nothing))
+
+#  最后得到peak.html
+#  http://www.pythonchallenge.com/pc/def/peak.html
